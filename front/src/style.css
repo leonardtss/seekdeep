@@ -1,0 +1,223 @@
+.new-chat-button{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    margin: 18px 0px;
+    background-color: #eef2ff;
+    color: #2563eb;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: fit-content;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+    z-index: 2;
+
+}
+.new-chat-button-small{
+  gap: 8px;
+  padding: 10px 16px;
+  margin: 18px 0px;
+  background-color: transparent;
+  color: #898888;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+}
+.expand-right{
+  gap: 8px;
+  padding: 40px 16px 0px;
+  margin: 18px 0px;
+  background-color: transparent;
+  color: #898888;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+
+}
+.expand-left{
+  padding: 0px 16px 0px;
+  margin: 26px 30px;
+  background-color: transparent;
+  color: #898888;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+
+}
+.new-chat-button:focus,
+.new-chat-button:active {
+    outline: none;
+    box-shadow: none;
+}
+
+
+.new-chat-button:hover {
+    background-color: #ced9fd;
+  }
+
+.custom-input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 16px;
+    color: #404040;
+    padding: 4px 0;
+    width:100%;
+    &::placeholder {
+        color: #9f9c9c;
+      }
+      
+}
+
+.left-buttons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: fit-content;
+    border-radius: 20px;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    font-size: 10px;
+    color: #4c4c4c;
+    font-weight: 400;
+    transition: background-color 0.1s, color 0.1s;
+  }
+  .left-buttons:focus,
+    .left-buttons:active {
+    outline: none;
+    box-shadow: none;
+}
+
+  .left-buttons-r1 {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: fit-content;
+    border-radius: 20px;
+    background-color: #DBEAFE;
+    border: 1px solid rgba(0, 122, 255, 0.15);
+    cursor: pointer;
+    font-size: 10px;
+    color: #4D6BFE;
+    font-weight: 400;
+    transition: background-color 0.1s, color 0.1s;
+  }
+
+  .left-buttons-r1:focus,
+  .left-buttons-r1:active {
+  outline: none;
+  box-shadow: none;
+}
+  .left-buttons-r1:hover {
+    background-color: #C3DAF8; /* Change to desired hover background color */
+
+} 
+  
+.left-buttons:hover {
+    background-color: #E0E4ED; /* Change to desired hover background color */
+    color: #4c4c4c; /* Change to desired hover text color */
+    border: 1px solid rgba(0, 0, 0, 0.12);
+
+}
+
+.paperclip{
+    height: fit-content;
+    background-color: transparent;
+    padding:5px;
+    border:none;
+    
+}
+
+.paperclip:hover {
+    background-color: #E0E4ED; /* Change to desired hover background color */
+    border:none
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}      
+
+.main-input {
+ 
+  background-color:#f3f4f6;
+  border-radius:16px;
+  box-shadow:0px 0px 0px .5px #dce0e9;
+
+}
+.side-bar {
+  width:320px;
+  background-color:#f9fbff00;
+  padding:10px;
+  border-right:1px solid #ededf1;
+  position:sticky;
+  top:0
+}
+.side-bar-small-expended {
+  width:240px;
+  position:absolute;
+  background-color:#f9fbff;
+  padding:10px;
+  border-right:1px solid #ededf1;
+  top:0;
+  z-index: 1000;
+  display:none;
+  height: 100vh;
+}
+.side-bar-small {
+  width:60px;
+  background-color:#f2f7ff00;
+  padding:10px;
+  border-right:1px solid #ededf1;
+  position:sticky;
+  top:0
+}
+.conversation:hover .delete-conversation {
+  display: flex;
+  z-index:1000000;
+
+}
+.delete-conversation {
+  display: none;
+
+}
+
+@media screen and (max-width: 1180px) {
+  .main-input {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1180px)  {
+  .main-input {
+    width: 850px;
+  }
+}
+
+@media screen and (max-width: 880px)  {
+  .main-input {
+    width: 500px;
+  }
+  .side-bar {
+    display:none;
+  }
+  .side-bar-small {
+    display:block;
+  }
+}
+
+@media screen and (max-width: 580px)  {
+  .main-input {
+    width: 80%;
+  }
+  .side-bar {
+    display:none;
+  }
+  .side-bar-small {
+    display:block;
+  }
+}
