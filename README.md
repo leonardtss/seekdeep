@@ -43,18 +43,15 @@ docker run --runtime nvidia --gpus all     -v ~/.cache/huggingface:/root/.cache/
 docker run --runtime nvidia --gpus all     -v ~/.cache/huggingface:/root/.cache/huggingface     -p 8000:8000     --ipc=host     vllm/vllm-openai:latest     --model modelName2     --max-model-len 10000
 ```
 
+**Paramètres clés** :  
+- **`--model modelName2`** : Remplacez par le modèle souhaité en fonction de vos besoins et de la puissance de votre machine, vous trouverez un très grand nombre de modèles sur [Hugging Face](https://huggingface.co/models).  
+- **`--max-model-len 10000`** : Ajustez en fonction des capacités de votre instance.  
 
 ### 2️⃣Déploiement du Frontend  
 
-Rendez-vous dans le fichier DeepseekInput.jsx qui se trouve dans front/src/. Dans ce fichier vous devez renseigner les variables :
-    modelName1 
-    modelName2
-    baseModelUrl1
-    baseModelUrl2
-    
-    baseModelUrl1 et baseModelUrl2 sont de la forme adresse "ip de l'instance":"port exposé", par exemple http://51.159.135.40:8000.
+Rendez-vous dans le fichier DeepseekInput.jsx qui se trouve dans front/src/. Dans ce fichier vous devez renseigner les variables : **modelName1**, **modelName2**, **baseModelUrl1**, **baseModelUrl2**. baseModelUrl1 et baseModelUrl2 sont de la forme adresse "ip de l'instance":"port exposé", par exemple http://51.159.135.40:8000.
 
-Il vous reste plus qu'a lancer l'application avec les commandes suivantes:
+Il vous reste plus qu'à lancer l'application avec les commandes suivantes:
 
 ```bash
 cd front
@@ -74,8 +71,8 @@ Si vous souhaitez **mémoriser les conversations**, vous avez besoin de :
 #### Configuration de MongoDB Atlas  
 
 1. Créez un **cluster**, un **utilisateur admin** et un **mot de passe**.  
-2. Récupérez l'**URL de connexion** et placez-la dans un fichier **.env** dans le dossier `api`.  
-3. Créez un utilisateur dans la collection users. Vous avez seulement besoin de renseigner le username, mongodb va créer un id. Cette id il faut le récupérer et le stocker dans la variable **userId ** qui se trouve dans front/App.jsx.
+2. Récupérez l'**URL de connexion** et placez-la dans un fichier **.env** que vous devez créer dans le dossier  `api` et nommez cette variable MONGODB_URL.  
+3. Créez un utilisateur dans la collection **users**. Vous avez seulement besoin de renseigner le **username**, mongodb va ensuite créer un id. Cet id il faut le récupérer et le stocker dans la variable **userId ** qui se trouve dans front/App.jsx.
 
 #### Déploiement de l’API  
 Pour déployer l'api exécutez les commandes suivantes.
