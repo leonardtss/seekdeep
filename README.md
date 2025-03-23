@@ -49,7 +49,7 @@ docker run --runtime nvidia --gpus all     -v ~/.cache/huggingface:/root/.cache/
 
 ### 2️⃣Déploiement du Frontend  
 
-Rendez-vous dans le fichier DeepseekInput.jsx qui se trouve dans front/src/. Dans ce fichier vous devez renseigner les variables : **modelName1**, **modelName2**, **baseModelUrl1**, **baseModelUrl2**. baseModelUrl1 et baseModelUrl2 sont de la forme adresse "ip de l'instance":"port exposé", par exemple http://51.159.135.40:8000.
+Rendez-vous dans le fichier DeepseekInput.jsx qui se trouve dans front/src/. Dans ce fichier vous devez renseigner les variables : **modelName1**, **modelName2**, **baseModelUrl1**, **baseModelUrl2**. baseModelUrl1 et baseModelUrl2 sont de la forme adresse "ip de l'instance":"port exposé" (par exemple http://51.159.135.40:8000).
 
 Il vous reste plus qu'à lancer l'application avec les commandes suivantes:
 
@@ -72,7 +72,7 @@ Si vous souhaitez **mémoriser les conversations**, vous avez besoin de :
 
 1. Créez un **cluster**, un **utilisateur admin** et un **mot de passe**.  
 2. Récupérez l'**URL de connexion** et placez-la dans un fichier **.env** que vous devez créer dans le dossier  `api` et nommez cette variable MONGODB_URL.  
-3. Créez un utilisateur dans la collection **users**. Vous avez seulement besoin de renseigner le **username**, mongodb va ensuite créer un id. Cet id il faut le récupérer et le stocker dans la variable **userId ** qui se trouve dans front/App.jsx.
+3. Créez un utilisateur dans la collection **users**. Vous avez seulement besoin de renseigner le **username**, mongodb va ensuite créer un id. Cet id il faut le récupérer et le stocker dans la variable **userId** qui se trouve dans front/App.jsx.
 
 #### Déploiement de l’API  
 Pour déployer l'api exécutez les commandes suivantes.
