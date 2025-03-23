@@ -9,7 +9,9 @@ function DeepseekInput({userId,setNewConversation,newConversation,newChat,setCon
     
     var modelName1 = "Qwen/QwQ-32B";
     var modelName2 = "cognitivecomputations/Dolphin3.0-Llama3.1-8B"
-    var baseModelUrl = "http://51.159.135.40:8000"
+    var baseModelUrl1 = "http://51.159.135.40:8000"
+    var baseModelUrl1 = "http://51.159.135.40:8001"
+
     const [stop, setStop] = useState(true);
     const [isAborted, setIsAborted] = useState(false);
     const [abortController, setAbortController] = useState(new AbortController());
@@ -179,14 +181,14 @@ function DeepseekInput({userId,setNewConversation,newConversation,newChat,setCon
             <div style={{display:"flex", paddingLeft:"10px", marginBottom:"5px"}}>
                 <div style={{display:"flex", gap:"10px"}}>
                   {r1?
-                      <button className='left-buttons-r1' onClick={()=>{setR1(false); setModelName(modelName2), setModelUrl(baseModelUrl+"/v1/chat/completions")}}>
+                      <button className='left-buttons-r1' onClick={()=>{setR1(false); setModelName(modelName2), setModelUrl(baseModelUrl2+"/v1/chat/completions")}}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-atom"><circle cx="12" cy="12" r="1"/><path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5Z"/><path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.52 4.54-6.54 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5Z"/></svg>
                             <span>
                             DeepThink (R1)
                             </span>
                       </button>
                   :
-                    <button className='left-buttons' onClick={()=>{setR1(true); setModelName(modelName1),setModelUrl(baseModelUrl+"/v1/chat/completions")}}>
+                    <button className='left-buttons' onClick={()=>{setR1(true); setModelName(modelName1),setModelUrl(baseModelUrl1+"/v1/chat/completions")}}>
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-atom"><circle cx="12" cy="12" r="1"/><path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5Z"/><path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.52 4.54-6.54 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5Z"/></svg>
                         <span>
                         DeepThink (R1)
